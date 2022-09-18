@@ -9,13 +9,21 @@ pip install invisibleroads-macros-process
 ## Use
 
 ```python
+import logging
+
 from invisibleroads_macros_process import LoggableProcess, StoppableProcess
+
+
+logging.basicConfig(level=logging.DEBUG)
+
 
 def f():
     print('whee')
 
+
 process = LoggableProcess(name='YOUR-PROCESS', target=f, daemon=True)
 process.start()
+
 
 process = StoppableProcess(name='YOUR-PROCESS', target=f, daemon=True)
 process.start()
