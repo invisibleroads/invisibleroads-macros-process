@@ -17,10 +17,10 @@ logging.basicConfig(level=logging.DEBUG)
 def f():
     print('whee')
 
-process = LoggableProcess(name='YOUR-PROCESS', target=f, daemon=True)
+process = LoggableProcess(name='MY-LOGGABLE', target=f, daemon=True)
 process.start()
 
-process = StoppableProcess(name='YOUR-PROCESS', target=f, daemon=True)
+process = StoppableProcess(name='MY-STOPPABLE', target=f, daemon=True)
 process.start()
 process.stop()
 ```
