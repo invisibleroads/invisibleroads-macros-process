@@ -2,11 +2,31 @@
 
 ## Install
 
-    pip install invisibleroads-macros-process
+```bash
+pip install invisibleroads-macros-process
+```
+
+## Use
+
+```python
+from invisibleroads_macros_process import LoggableProcess, StoppableProcess
+
+def f():
+    print('whee')
+
+process = LoggableProcess(name='YOUR-PROCESS', target=f, daemon=True)
+process.start()
+
+process = StoppableProcess(name='YOUR-PROCESS', target=f, daemon=True)
+process.start()
+process.stop()
+```
 
 ## Test
 
-    git clone https://github.com/invisibleroads/invisibleroads-macros-process
-    cd invisibleroads-macros-process
-    pip install -e .[test]
-    pytest --cov=invisibleroads_macros_process --cov-report term-missing tests
+```bash
+git clone https://github.com/invisibleroads/invisibleroads-macros-process
+cd invisibleroads-macros-process
+pip install -e .[test]
+pytest --cov=invisibleroads_macros_process --cov-report term-missing tests
+```
