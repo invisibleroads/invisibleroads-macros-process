@@ -10,7 +10,6 @@ pip install invisibleroads-macros-process
 
 ```python
 import logging
-
 from invisibleroads_macros_process import LoggableProcess, StoppableProcess
 
 logging.basicConfig(level=logging.DEBUG)
